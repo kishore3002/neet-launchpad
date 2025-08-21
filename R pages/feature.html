@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEET Aspirants - Comprehensive Features</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="navigationbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .feature-section {
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        .feature-section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .feature-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        .feature-section.active .feature-card {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .feature-section.active .feature-card:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .feature-section.active .text-6xl {
+            animation: float 3s ease-in-out infinite;
+        }
+         .navbar {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .navbar-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 0.25rem;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+         @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .navbar-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+                padding: 1rem;
+                gap: 1rem;
+            }
+            
+            .navbar-links.active {
+                display: flex;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <div class="navbar">
+        
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="navbar-brand">NEETprep</div>
+        <div class="navbar-links">
+            <a href="../index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#">Feature</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+    
+    <div class="container mx-auto px-4 py-12">
+        <h1 class="text-5xl font-bold text-center mb-16 text-blue-700">
+            OUR Features
+        </h1>
+
+        <!-- Study Resources Section -->
+        <section class="feature-section mb-16">
+            <div class="bg-white rounded-2xl shadow-2xl p-10">
+                <div class="flex items-center mb-8">
+                    <div class="text-6xl mr-6">📚</div>
+                    <h2 class="text-3xl font-semibold text-blue-800">Study Resources</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="feature-card p-6 bg-blue-50 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-4">📖</span>
+                            <h3 class="text-xl font-semibold text-blue-700">Comprehensive Guides</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Meticulously crafted study materials covering entire NEET syllabus with in-depth explanations, concept maps, and advanced learning techniques.
+                        </p>
+                    </div>
+                    <div class="feature-card p-6 bg-blue-50 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-4">🖥️</span>
+                            <h3 class="text-xl font-semibold text-blue-700">Interactive Learning</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Practice exercises with real-time feedback, video tutorials, and interactive modules to enhance understanding of complex medical concepts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personalized Learning Section -->
+        <section class="feature-section mb-16">
+            <div class="bg-white rounded-2xl shadow-2xl p-10">
+                <div class="flex items-center mb-8">
+                    <div class="text-6xl mr-6">🎯</div>
+                    <h2 class="text-3xl font-semibold text-green-800">Personalized Learning</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="feature-card p-6 bg-green-50 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-4">🧠</span>
+                            <h3 class="text-xl font-semibold text-green-700">Adaptive Study Paths</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            AI-driven personalized learning algorithms that adapt to individual strengths, weaknesses, and learning styles, creating a unique study roadmap.
+                        </p>
+                    </div>
+                    <div class="feature-card p-6 bg-green-50 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-4">📊</span>
+                            <h3 class="text-xl font-semibold text-green-700">Smart Assessment</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Dynamic test generation with real-time performance analysis, identifying knowledge gaps and providing targeted improvement strategies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collaborative Tools Section -->
+        <section class="feature-section mb-16">
+            <div class="bg-white rounded-2xl shadow-2xl p-10">
+                <div class="flex items-center mb-8">
+                    <div class="text-6xl mr-6">🤝</div>
+                    <h2 class="text-3xl font-semibold text-purple-800">Collaborative Learning</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="feature-card p-6 bg-purple-50 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-4">💬</span>
+                            <h3 class="text-xl font-semibold text-purple-700">Community Interaction</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Engage in peer discussions, teacher-student forums, and collaborative problem-solving to enhance learning through shared knowledge and experiences.
+                        </p>
+                    </div>
+                    <div class="feature-card p-6 bg-purple-50 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-4">🏆</span>
+                            <h3 class="text-xl font-semibold text-purple-700">Gamified Experience</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Motivation-driven learning with achievement streaks, badges, leaderboards, and reward systems to make preparation enjoyable and engaging.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance Tracking Section -->
+        <section class="feature-section mb-16">
+            <div class="bg-white rounded-2xl shadow-2xl p-10">
+                <div class="flex items-center mb-8">
+                    <div class="text-6xl mr-6">📈</div>
+                    <h2 class="text-3xl font-semibold text-red-800">Performance Tracking</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="feature-card p-6 bg-red-50 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-4">⏱️</span>
+                            <h3 class="text-xl font-semibold text-red-700">Instant Analysis</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Immediate performance evaluation after each test, providing detailed insights into strengths, weaknesses, and areas requiring focused improvement.
+                        </p>
+                    </div>
+                    <div class="feature-card p-6 bg-red-50 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-4">🏅</span>
+                            <h3 class="text-xl font-semibold text-red-700">Comparative Tracking</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Comprehensive leaderboard system providing transparent performance metrics and comparative analysis within the student community.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="text-center py-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-2xl">
+            <h2 class="text-4xl font-bold mb-6">Ready to Transform Your NEET Preparation?</h2>
+            <h5 class="text-4xl font-bold mb-6">"Start your journey from us!"</h5>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>We're dedicated to making education accessible and engaging through innovative technology solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i>fb</i></a>
+                        <a href="#"><i>tw</i></a>
+                        <a href="#"><i>in</i></a>
+                        <a href="#"><i>ig</i></a>
+                    </div>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Programs</a></li>
+                        <li><a href="#">Teachers</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates about new courses and features.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>&copy; 2025 EduTech Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Animate cards within the section
+                    const cards = entry.target.querySelectorAll('.feature-card');
+                    anime({
+                        targets: cards,
+                        opacity: [0, 1],
+                        translateY: [-30, 0],
+                        delay: anime.stagger(200),
+                        easing: 'easeOutExpo',
+                        duration: 1000
+                    });
+                    
+                    // Animate section emoji
+                    const emoji = entry.target.querySelector('.text-6xl');
+                    anime({
+                        targets: emoji,
+                        scale: [0.5, 1],
+                        rotate: ['-30deg', '0deg'],
+                        duration: 800,
+                        easing: 'easeOutElastic(1, .5)'
+                    });
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.feature-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // JavaScript for handling the responsive behavior
+        function toggleMenu() {
+          const navbarLinks = document.querySelector('.navbar-links');
+          navbarLinks.classList.toggle('active');
+        }
+    
+    </script>
+</body>
+</html>

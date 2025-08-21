@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEET Aspirants - Medical Dreams Realized</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="navigationbar.css">-->
+    <link rel="stylesheet" href="navigationbar.css">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8;
+            overflow-x: hidden;
+        }
+        .animated-icon {
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .section-card {
+            perspective: 1000px;
+            transition: all 0.6s;
+            position: relative;
+        }
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 1rem;
+            padding: 2px;
+            background: linear-gradient(45deg, transparent, transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            transition: all 0.6s;
+            opacity: 0;
+        }
+        .section-card:nth-child(1)::before {
+            background: linear-gradient(45deg, #2563eb, #60a5fa);
+        }
+        .section-card:nth-child(2)::before {
+            background: linear-gradient(45deg, #16a34a, #4ade80);
+        }
+        .section-card:nth-child(3)::before {
+            background: linear-gradient(45deg, #7c3aed, #a78bfa);
+        }
+        .section-card:hover {
+            transform: rotateY(10deg) translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        .section-card:hover::before {
+            opacity: 1;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+         .navbar {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .navbar-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 0.25rem;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+         @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .navbar-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+                padding: 1rem;
+                gap: 1rem;
+            }
+            
+            .navbar-links.active {
+                display: flex;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <div class="navbar">
+        
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="navbar-brand">NEETprep</div>
+        <div class="navbar-links">
+            <a href="../index.html">Home</a>
+            <a href="#">About</a>
+            <a href="feature.html">Feature</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+    
+    <div class="container mx-auto px-4">
+        <!-- Header -->
+        <header class="py-16 text-center relative">
+            <div id="header-icons" class="absolute top-0 left-0 right-0 flex justify-between opacity-20">
+                <svg class="w-24 h-24 text-blue-200 animated-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 12l-10-5 10-5 10 5-10 5z"/>
+                </svg>
+                <svg class="w-24 h-24 text-green-200 animated-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+            </div>
+            <h1 class="text-5xl font-bold mb-4 text-blue-700 relative z-10">About US</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto relative z-10">
+                Transforming Medical Dreams into Remarkable Achievements
+            </p>
+        </header>
+
+        <!-- Main Sections -->
+        <main class="grid md:grid-cols-3 gap-8 mb-16">
+            <!-- About Us -->
+            <div class="bg-white section-card p-8 rounded-2xl shadow-xl text-center overflow-hidden">
+                <div class="mb-6 inline-block pulse-animation">
+                    <svg class="w-24 h-24 text-blue-600 animated-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-semibold mb-4 text-blue-800">Transform</h2>
+                <p class="text-gray-600">
+                    Dedicated to empowering NEET aspirants with cutting-edge resources and personalized guidance. Our mission is to transform potential into professional medical excellence.
+                </p>
+            </div>
+
+            <!-- Expertise -->
+            <div class="bg-white section-card p-8 rounded-2xl shadow-xl text-center overflow-hidden">
+                <div class="mb-6 inline-block pulse-animation">
+                    <svg class="w-24 h-24 text-green-600 animated-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-semibold mb-4 text-green-800">Expertise</h2>
+                <p class="text-gray-600">
+                    Comprehensive study materials, expert mentorship, and adaptive learning strategies. We provide 360-degree preparation covering theoretical knowledge and practical insights.
+                </p>
+            </div>
+
+            <!-- Growth -->
+            <div class="bg-white section-card p-8 rounded-2xl shadow-xl text-center overflow-hidden">
+                <div class="mb-6 inline-block pulse-animation">
+                    <svg class="w-24 h-24 text-purple-600 animated-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-semibold mb-4 text-purple-800">Growth</h2>
+                <p class="text-gray-600">
+                    Continuous evolution with latest exam patterns, technological advancements, and personalized growth tracking. We ensure holistic development beyond traditional coaching.
+                </p>
+            </div>
+        </main>
+
+        <!-- Detailed Features -->
+        <section class="bg-white rounded-2xl shadow-lg p-12 mb-16">
+            <h2 class="text-3xl font-bold text-center mb-10 text-indigo-800">Why Choose Us?</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-blue-50 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-700">🎓 Expert Faculty</h3>
+                    <p class="text-gray-600">
+                        Learn from experienced medical professionals and top NEET rankers with proven track records of success.
+                    </p>
+                </div>
+                <div class="bg-green-50 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4 text-green-700">📊 Performance Analytics</h3>
+                    <p class="text-gray-600">
+                        Detailed performance tracking, personalized progress reports, and data-driven improvement strategies.
+                    </p>
+                </div>
+                <div class="bg-purple-50 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4 text-purple-700">💡 Innovative Learning</h3>
+                    <p class="text-gray-600">
+                        Adaptive learning technologies, AI-powered mock tests, and interactive study modules.
+                    </p>
+                </div>
+                <div class="bg-pink-50 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4 text-pink-700">🌐 Comprehensive Support</h3>
+                    <p class="text-gray-600">
+                        24/7 doubt resolution, mental health support, and career counseling for holistic student development.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>We're dedicated to making education accessible and engaging through innovative technology solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i>fb</i></a>
+                        <a href="#"><i>tw</i></a>
+                        <a href="#"><i>in</i></a>
+                        <a href="#"><i>ig</i></a>
+                    </div>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Programs</a></li>
+                        <li><a href="#">Teachers</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates about new courses and features.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>&copy; 2025 EduTech Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+            function toggleMenu() {
+                const navLinks = document.querySelector('.navbar-links');
+                navLinks.classList.toggle('active');
+            }
+        // Header Icon Animation
+        anime({
+            targets: '#header-icons .animated-icon',
+            translateY: [0, 20, 0],
+            rotate: '1turn',
+            duration: 2000,
+            easing: 'easeInOutQuad',
+            loop: true
+        });
+
+        // Get Started Button Interaction
+        document.getElementById('getStartedBtn').addEventListener('click', function() {
+            alert('Welcome to your NEET preparation journey! Personalized guidance awaits.');
+        });
+
+    </script>
+    
+</body>
+</html>
