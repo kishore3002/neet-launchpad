@@ -33,10 +33,15 @@ This project may look like “just a landing page,” but for me, it was:
 
 And the best part? My effort was recognized with an official **certificate of completion** from Matrix Smart Learning.  
 
-📜 **Certificate of Internship Completion**:  
-<img src="assets/Internship.jpg" alt="Internship Certificate" width="400"/>
+<h3 align="center">📜 Certificate of Internship Completion </h3>
+<p align="center">
+  
+  <img src="assets/Internship.jpg" alt="Internship Certificate" height="600" width="500"/>
+  
+</p>
+<p align="center"> This certificate isn’t just paper — it’s proof of my first milestone in tech </p>
 
-This certificate isn’t just paper — it’s proof of my **first milestone in tech**.  
+
 
 ---
 
@@ -95,12 +100,12 @@ Open terminal in VS Code (`Ctrl + Shift + ~`) and run:
 git clone https://github.com/kishore3002/neet-launchpad.git
 ```
 
-step 2 : Open the project folder 
+Step 2 : Open the project folder 
 ```bash
 cd neet-launchpad
 ```
 
-step 3: Run in browser
+Step 3: Run in browser
 Just open index.html in your preferred browser(chrome)
 
 ----
@@ -111,6 +116,16 @@ Just open index.html in your preferred browser(chrome)
 - 🔄 **Team Collaboration & Communication**  
 - ⏳ **Time Management under deadlines**  
 - 🧠 **Problem-Solving mindset**  
+
+---
+
+## 🙏 Acknowledgements  
+
+I would like to express my sincere gratitude to **Matrix Smart Learning** for giving me the opportunity to work on this internship project.  
+
+A special thanks to my mentors and peers who guided me, answered my doubts, and encouraged me to explore new ways of building user-friendly solutions.  
+
+Most importantly, this project taught me that even small steps — like creating a landing page — can lead to **big personal growth** when combined with curiosity, effort, and the right support system.  
 
 ---
 
