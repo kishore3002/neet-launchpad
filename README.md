@@ -34,7 +34,7 @@ This project may look like “just a landing page,” but for me, it was:
 And the best part? My effort was recognized with an official **certificate of completion** from Matrix Smart Learning.  
 
 📜 **Certificate of Internship Completion**:  
-![Internship Certificate](./Internship.jpg)  
+<img src="assets/Internship.jpg" alt="Internship Certificate" width="400"/>
 
 This certificate isn’t just paper — it’s proof of my **first milestone in tech**.  
 
